@@ -4171,3 +4171,38 @@ Processing by PostsController#new as HTML
   [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
   Rendered posts/_form.html.erb (8.2ms)
   Rendered posts/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 39ms (Views: 23.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for 50.100.146.204 at 2019-02-03 16:00:39 +0000
+Cannot render console from 50.100.146.204! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authors/4/posts" for 50.100.146.204 at 2019-02-03 16:00:40 +0000
+Cannot render console from 50.100.146.204! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Parameters: {"author_id"=>"4"}
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 4]]
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 25ms (Views: 21.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/authors/4/posts/new" for 50.100.146.204 at 2019-02-03 16:00:47 +0000
+Cannot render console from 50.100.146.204! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Parameters: {"author_id"=>"4"}
+  [1m[35mAuthor Exists (0.2ms)[0m  SELECT  1 AS one FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/_form.html.erb (1.6ms)
+  Rendered posts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 26ms (Views: 14.2ms | ActiveRecord: 0.3ms)
