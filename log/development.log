@@ -4099,3 +4099,12 @@ Processing by PostsController#edit as HTML
   Rendered posts/_form.html.erb (1.1ms)
   Rendered posts/edit.html.erb within layouts/application (2.0ms)
 Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/authors/412321/posts/18/edit" for 50.100.146.204 at 2019-02-03 15:46:48 +0000
+Cannot render console from 50.100.146.204! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"author_id"=>"412321", "id"=>"18"}
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 412321]]
+Redirected to http://174.138.35.103:37675/authors
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
