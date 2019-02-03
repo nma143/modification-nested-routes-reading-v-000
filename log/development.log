@@ -4069,3 +4069,13 @@ Processing by PostsController#create as HTML
   [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
 Redirected to http://174.138.35.103:37675/posts/18
 Completed 302 Found in 5ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/posts/18" for 50.100.146.204 at 2019-02-03 15:42:48 +0000
+Cannot render console from 50.100.146.204! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 18]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.4ms)
